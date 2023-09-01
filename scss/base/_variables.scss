@@ -5,6 +5,8 @@
   --secondary-text-color: #99a99b;
 
   --title-light-color: #fff;
+  --border-color: #000;
+  --type-background-color: #33bbc5;
 }
 
 .dark {
@@ -12,6 +14,8 @@
   --main-bg-color: #05151e;
 
   --secondary-text-color: #99a99b;
+  --border-color: #fff;
+  --type-background-color: #ff52a2;
 }
 
 .dark .movie__favorites {
@@ -25,4 +29,7 @@
 .dark .movie__input {
   background-color: #282326;
   background-image: url("/img/search-dark.png");
+}
+.dark .element__play {
+  background-image: url("/img/play-dark.png");
 }

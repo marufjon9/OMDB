@@ -282,7 +282,141 @@
   width: 100%;
   max-height: 700px;
   height: 100%;
-  background-color: yellow;
-  border-radius: 15px;
   margin: 0 auto;
+  overflow: hidden;
+}
+.element {
+}
+.element__top {
+}
+.element__img {
+  max-width: 150px;
+  border-radius: 25px;
+  margin: 0 auto;
+}
+
+.element__bottom {
+  margin-top: 10px;
+}
+.element__writers {
+  display: flex;
+  gap: 20px;
+}
+.element__writer {
+}
+.element__name {
+}
+.element__title {
+  font-size: 25px;
+  margin: 5px 0;
+}
+.element__genre {
+  display: flex;
+  gap: 10px;
+  margin: 5px 0;
+}
+.element__type-first {
+  font-size: 10px;
+  border: 1px solid var(--border-color);
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color: var(--type-background-color);
+}
+.element__type-second {
+  font-size: 10px;
+  border: 1px solid var(--border-color);
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color: var(--type-background-color);
+}
+.element__type-third {
+  font-size: 10px;
+  border: 1px solid var(--border-color);
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color: var(--type-background-color);
+}
+.element__stats {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 15px;
+}
+.borders {
+  border-radius: 11px;
+  border: 1px solid var(--border-color);
+  max-width: 250px;
+  width: 100%;
+  padding: 8px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background-color: var(--type-background-color);
+}
+.borders__rotate {
+  font-size: 15px;
+}
+.rotate {
+  text-align: center;
+}
+
+.element__play {
+  background-image: url("/img/play.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px;
+}
+.element__rating {
+}
+.span__rating-value {
+}
+.element__release {
+}
+.span__release-value {
+}
+.element__boxoffice {
+}
+.span__boxoffice-value {
+}
+.element__length {
+}
+.span__length-value {
+}
+.element__inner {
+}
+.element__info {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.element__desription {
+  margin-bottom: 15px;
+}
+.element__ratings {
+  display: flex;
+  gap: 10px;
+}
+.element__imdb {
+  max-width: 305px;
+  width: 100%;
+  &::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-image: url("/img/imdp.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+.element__rt {
+  max-width: 305px;
+  width: 100%;
+}
+.element__metacritic {
+  max-width: 305px;
+  width: 100%;
 }
