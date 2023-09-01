@@ -66,7 +66,7 @@
 .main__list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: minmax(200px, 348px);
+  grid-template-rows: minmax(200px, 1fr);
   gap: 20px;
   justify-content: center;
 }
@@ -75,6 +75,7 @@
   max-width: 305px;
   width: 100%;
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.95);
+  // border: 2px solid #fff;
 }
 .movie__img {
   position: relative;
