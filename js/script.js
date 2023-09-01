@@ -2,9 +2,33 @@ const movieTheme = document.querySelector(".movie__theme");
 const mainList = document.querySelector(".main__list");
 const fYear = document.querySelector(".f__year");
 
+if (localStorage.getItem("mode") == "dark") {
+  darkMode();
+} else {
+  noDark();
+}
+
 movieTheme.addEventListener("click", function () {
   document.body.classList.toggle("dark");
+
+  if (document.body.classList.contains("dark")) {
+    darkMode();
+  } else {
+    noDark();
+  }
 });
+
+function darkMode() {
+  document.body.classList.add("dark");
+  localStorage.setItem("mode", "dark");
+  // themeBtn.textContent = "Light Mode";
+}
+
+function noDark() {
+  document.body.classList.remove("dark");
+  localStorage.setItem("mode", "light");
+  // themeBtn.textContent = "Dark Mode";
+}
 
 function renderMovies(array) {
   array.forEach((element) => {
@@ -27,7 +51,7 @@ function renderMovies(array) {
   });
 }
 
-renderMovies(movies);
+// renderMovies(movies);
 
 const date = new Date();
 
