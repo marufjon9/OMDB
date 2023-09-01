@@ -1,0 +1,125 @@
+.header {
+  padding-top: 25px;
+  margin-bottom: 30px;
+}
+.movie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  text-decoration: none;
+  color: var(--main-text-color);
+}
+.movie__form {
+}
+.movie__input {
+  outline: none;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 12px;
+  padding: 4px 6px;
+  background-image: url("/img/search-default.png");
+  background-position: right 7px center;
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+}
+.movie__container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.movie__favorites {
+  width: 25px;
+  height: 25px;
+  background-image: url("/img/bookmarked.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid transparent;
+  background-color: transparent;
+}
+.movie__theme {
+  width: 25px;
+  height: 25px;
+  background-image: url("/img/moon-light.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid transparent;
+  background-color: transparent;
+}
+.main {
+  padding-bottom: 30px;
+}
+.main__wrapper {
+}
+.main__title {
+  margin-bottom: 25px;
+}
+.main__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  justify-content: center;
+}
+.movie__item {
+  position: relative;
+  max-width: 305px;
+  width: 100%;
+}
+.movie__img {
+}
+.movie__fav {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 160px;
+  right: 0;
+  background-image: url("/img/add.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid transparent;
+  background-color: transparent;
+}
+.movie__textbox {
+}
+.movie__title {
+}
+.movie__type {
+}
+.footer {
+  padding-bottom: 30px;
+}
+.footer__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__copyright {
+  font-size: 10px;
+}
+
+// Media Queries
+
+// @media only screen and (min-width: 375px) {
+//   .main__list {
+//     gap: 25px;
+//   }
+//   .movie__item {
+//     position: relative;
+//     max-width: 155px;
+//     width: 100%;
+//   }
+// }
+// @media only screen and (min-width: 500px) {
+//   .main__list {
+//     gap: 2px;
+//   }
+//   .movie__item {
+//     position: relative;
+//     max-width: 220px;
+//   }
+// }

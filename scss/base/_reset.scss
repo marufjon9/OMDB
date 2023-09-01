@@ -1,0 +1,43 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+html {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--main-text-color);
+  background-color: var(--main-bg-color);
+  font-size: 15px;
+}
+main {
+  flex-grow: 1;
+}
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+li {
+  text-decoration: none;
+}
