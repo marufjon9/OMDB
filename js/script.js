@@ -62,7 +62,7 @@ function renderCard(array) {
 
   array.forEach((element) => {
     mainListMovies.innerHTML += `
-            <li class="element__item element no-show" dataset=${element.id}>
+            <li class="element__item element" dataset=${element.id}>
               <div class="element__top">
                 <img
                   src=${element.img}
@@ -129,11 +129,8 @@ function renderCard(array) {
 mainList.addEventListener("click", function (e) {
   if (e.target.matches(".movie__img")) {
     mainList.innerHTML = "";
-    const numberId = e.target.dataset.id;
-    // console.log(numberId);
-    const foundMovie = movies.find((item) => {
-      return item.id == numberId;
-    });
+    const elementId = e.target.dataset.id;
+    const foundMovie = movies.filter((item) => item.id == elementId);
     renderCard(foundMovie);
   }
 });
