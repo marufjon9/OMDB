@@ -5,6 +5,27 @@ movies = [
     title: "Interstellar",
     year: 2014,
     type: ["Adventure, Drama, Sci-Fi"],
+    director: ["Aaron Horvath", "Michael Jelenic", "Pierre Leduc"],
+    genre: ["Animation", "Adventure", "Comedy"],
+    rated: "PG",
+    released: "05 Apr 2023",
+    boxoffice: "$574,223,720",
+    runtime: "92 min",
+    plot: "A plumber named Mario travels through an underground labyrinth with his brother, Luigi, trying to save a captured princess.",
+    Ratings: [
+      {
+        Source: "Internet Movie Database",
+        Value: "7.1/10",
+      },
+      {
+        Source: "Rotten Tomatoes",
+        Value: "59%",
+      },
+      {
+        Source: "Metacritic",
+        Value: "46/100",
+      },
+    ],
   },
   {
     id: 2,
@@ -12,6 +33,27 @@ movies = [
     title: "You've Got Mail",
     year: 1998,
     type: ["Comedy", "Drama", "Romance"],
+    director: ["Aaron Horvath", "Michael Jelenic", "Pierre Leduc"],
+    genre: ["Animation", "Adventure", "Comedy"],
+    rated: "PG",
+    released: "05 Apr 2023",
+    boxoffice: "$574,223,720",
+    runtime: "92 min",
+    plot: "A plumber named Mario travels through an underground labyrinth with his brother, Luigi, trying to save a captured princess.",
+    Ratings: [
+      {
+        Source: "Internet Movie Database",
+        Value: "7.1/10",
+      },
+      {
+        Source: "Rotten Tomatoes",
+        Value: "59%",
+      },
+      {
+        Source: "Metacritic",
+        Value: "46/100",
+      },
+    ],
   },
   {
     id: 3,
@@ -19,6 +61,27 @@ movies = [
     title: "The Crowded Room",
     year: 2023,
     type: ["Biography, Crime, Drama"],
+    director: ["Aaron Horvath", "Michael Jelenic", "Pierre Leduc"],
+    genre: ["Animation", "Adventure", "Comedy"],
+    rated: "PG",
+    released: "05 Apr 2023",
+    boxoffice: "$574,223,720",
+    runtime: "92 min",
+    plot: "A plumber named Mario travels through an underground labyrinth with his brother, Luigi, trying to save a captured princess.",
+    Ratings: [
+      {
+        Source: "Internet Movie Database",
+        Value: "7.1/10",
+      },
+      {
+        Source: "Rotten Tomatoes",
+        Value: "59%",
+      },
+      {
+        Source: "Metacritic",
+        Value: "46/100",
+      },
+    ],
   },
   {
     id: 4,
@@ -26,6 +89,27 @@ movies = [
     title: "The Discovery",
     year: 2017,
     type: ["Drama, Romance, Sci-Fi"],
+    director: ["Aaron Horvath", "Michael Jelenic", "Pierre Leduc"],
+    genre: ["Animation", "Adventure", "Comedy"],
+    rated: "PG",
+    released: "05 Apr 2023",
+    boxoffice: "$574,223,720",
+    runtime: "92 min",
+    plot: "A plumber named Mario travels through an underground labyrinth with his brother, Luigi, trying to save a captured princess.",
+    Ratings: [
+      {
+        Source: "Internet Movie Database",
+        Value: "7.1/10",
+      },
+      {
+        Source: "Rotten Tomatoes",
+        Value: "59%",
+      },
+      {
+        Source: "Metacritic",
+        Value: "46/100",
+      },
+    ],
   },
   {
     id: 5,
@@ -33,6 +117,27 @@ movies = [
     title: "Run",
     year: 2020,
     type: ["Mystery, Thriller"],
+    director: ["Aaron Horvath", "Michael Jelenic", "Pierre Leduc"],
+    genre: ["Animation", "Adventure", "Comedy"],
+    rated: "PG",
+    released: "05 Apr 2023",
+    boxoffice: "$574,223,720",
+    runtime: "92 min",
+    plot: "A plumber named Mario travels through an underground labyrinth with his brother, Luigi, trying to save a captured princess.",
+    Ratings: [
+      {
+        Source: "Internet Movie Database",
+        Value: "7.1/10",
+      },
+      {
+        Source: "Rotten Tomatoes",
+        Value: "59%",
+      },
+      {
+        Source: "Metacritic",
+        Value: "46/100",
+      },
+    ],
   },
   {
     id: 6,
@@ -40,6 +145,27 @@ movies = [
     title: "How To Be Single",
     year: 2016,
     type: ["Comedy, Drama, Romance"],
+    director: ["Aaron Horvath", "Michael Jelenic", "Pierre Leduc"],
+    genre: ["Animation", "Adventure", "Comedy"],
+    rated: "PG",
+    released: "05 Apr 2023",
+    boxoffice: "$574,223,720",
+    runtime: "92 min",
+    plot: "A plumber named Mario travels through an underground labyrinth with his brother, Luigi, trying to save a captured princess.",
+    Ratings: [
+      {
+        Source: "Internet Movie Database",
+        Value: "7.1/10",
+      },
+      {
+        Source: "Rotten Tomatoes",
+        Value: "59%",
+      },
+      {
+        Source: "Metacritic",
+        Value: "46/100",
+      },
+    ],
   },
 
   {
@@ -48,6 +174,27 @@ movies = [
     title: "Our Friend",
     year: 2019,
     type: ["Drama", "Romance"],
+    director: ["Aaron Horvath", "Michael Jelenic", "Pierre Leduc"],
+    genre: ["Animation", "Adventure", "Comedy"],
+    rated: "PG",
+    released: "05 Apr 2023",
+    boxoffice: "$574,223,720",
+    runtime: "92 min",
+    plot: "A plumber named Mario travels through an underground labyrinth with his brother, Luigi, trying to save a captured princess.",
+    Ratings: [
+      {
+        Source: "Internet Movie Database",
+        Value: "7.1/10",
+      },
+      {
+        Source: "Rotten Tomatoes",
+        Value: "59%",
+      },
+      {
+        Source: "Metacritic",
+        Value: "46/100",
+      },
+    ],
   },
   {
     id: 8,
@@ -55,6 +202,27 @@ movies = [
     title: "The Painted Veil",
     year: 2006,
     type: ["Drama", "Romance"],
+    director: ["Aaron Horvath", "Michael Jelenic", "Pierre Leduc"],
+    genre: ["Animation", "Adventure", "Comedy"],
+    rated: "PG",
+    released: "05 Apr 2023",
+    boxoffice: "$574,223,720",
+    runtime: "92 min",
+    plot: "A plumber named Mario travels through an underground labyrinth with his brother, Luigi, trying to save a captured princess.",
+    Ratings: [
+      {
+        Source: "Internet Movie Database",
+        Value: "7.1/10",
+      },
+      {
+        Source: "Rotten Tomatoes",
+        Value: "59%",
+      },
+      {
+        Source: "Metacritic",
+        Value: "46/100",
+      },
+    ],
   },
 
   {
@@ -63,6 +231,27 @@ movies = [
     title: "The French Dispatch",
     year: 2021,
     type: ["Comedy", "Drama", "Romance"],
+    director: ["Aaron Horvath", "Michael Jelenic", "Pierre Leduc"],
+    genre: ["Animation", "Adventure", "Comedy"],
+    rated: "PG",
+    released: "05 Apr 2023",
+    boxoffice: "$574,223,720",
+    runtime: "92 min",
+    plot: "A plumber named Mario travels through an underground labyrinth with his brother, Luigi, trying to save a captured princess.",
+    Ratings: [
+      {
+        Source: "Internet Movie Database",
+        Value: "7.1/10",
+      },
+      {
+        Source: "Rotten Tomatoes",
+        Value: "59%",
+      },
+      {
+        Source: "Metacritic",
+        Value: "46/100",
+      },
+    ],
   },
   {
     id: 10,
@@ -70,5 +259,26 @@ movies = [
     title: "Ratched",
     year: 2020,
     type: ["Crime, Drama, History"],
+    director: ["Aaron Horvath", "Michael Jelenic", "Pierre Leduc"],
+    genre: ["Animation", "Adventure", "Comedy"],
+    rated: "PG",
+    released: "05 Apr 2023",
+    boxoffice: "$574,223,720",
+    runtime: "92 min",
+    plot: "A plumber named Mario travels through an underground labyrinth with his brother, Luigi, trying to save a captured princess.",
+    Ratings: [
+      {
+        Source: "Internet Movie Database",
+        Value: "7.1/10",
+      },
+      {
+        Source: "Rotten Tomatoes",
+        Value: "59%",
+      },
+      {
+        Source: "Metacritic",
+        Value: "46/100",
+      },
+    ],
   },
 ];

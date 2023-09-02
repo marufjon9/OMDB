@@ -1,6 +1,7 @@
 const movieTheme = document.querySelector(".movie__theme");
 const mainList = document.querySelector(".main__list");
 const fYear = document.querySelector(".f__year");
+const mainListMovies = document.querySelector(".main__list-movies");
 
 if (localStorage.getItem("mode") == "dark") {
   darkMode();
@@ -31,9 +32,10 @@ function noDark() {
 }
 
 function renderMovies(array) {
+  mainList.textContent = "";
   array.forEach((element) => {
     mainList.innerHTML += `
-      <li class="movie__item">
+      <li class="movie__item" data-id=${element.id}>
         <img
           dataset=${element.id}
           src=${element.img}
@@ -43,6 +45,7 @@ function renderMovies(array) {
         />
         <div class="movie__textbox">
           <h2 class="movie__title">${element.title} <span>${element.year}</span></h2>
+          
           <p class="movie__type">${element.type}</p>
         </div>
         <button class="movie__fav" type="button"></button>
@@ -51,7 +54,90 @@ function renderMovies(array) {
   });
 }
 
-// renderMovies(movies);
+function renderCard(array) {
+  array.forEach((element) => {
+    mainListMovies.innerHTML += `
+            <li class="element__item element no-show" data-id=${element.id}>
+              <div class="element__top">
+                <img
+                  src=${element.img}
+                  alt="${element.title}"
+                  class="element__img"
+                />
+              </div>
+              <div class="element__bottom">
+                <div class="element__writers">
+                  <p class="element__writer">${element.director[0]}</p>
+                  <p class="element__writer">${element.director[1]}</p>
+                </div>
+                <div class="element__name">
+                  <p class="element__title">${element.title}</p>
+                </div>
+                <div class="element__genre">
+                  <span class="element__type-first">${element.genre[0]}</span>
+                  <span class="element__type-second">${element.genre[1]}</span>
+                  <span class="element__type-third">${element.genre[2]}</span>
+                </div>
+                <div class="element__stats">
+                  <div class="element__play borders"></div>
+                  <span class="element__rating borders"
+                    >Rating
+                    <span class="span__rating-value rotate">${element.rated}</span></span
+                  >
+                  <span class="element__release borders"
+                    >Release
+                    <span class="span__release-value rotate"
+                      >${element.released}</span
+                    ></span
+                  >
+                  <span class="element__boxoffice borders"
+                    >Boxoffice
+                    <span class="span__boxoffice-value rotate"
+                      >${element.boxoffice}</span
+                    ></span
+                  >
+                  <span class="element__length borders"
+                    >Length
+                    <span class="span__length-value rotate">${element.runtime}</span></span
+                  >
+                </div>
+                <div class="element__inner">
+                  <p class="element__info">Description</p>
+                  <p class="element__desription">
+                    ${element.plot}
+                  </p>
+                  <div class="element__ratings">
+                    <p class="element__imdb">${element.Ratings[0].Value}</p>
+                    <p class="element__rt">${element.Ratings[0].Value}</p>
+                    <p class="element__metacritic">${element.Ratings[0].Value}</p>
+                  </div>
+                </div>
+              </div>
+        </li>
+`;
+  });
+}
+const movieImg = document.querySelector(".movie__img");
+const elementItem = document.querySelector(".element__item");
+const elementClose = document.querySelector(".element__close");
+
+mainListMovies.addEventListener("click", function (e) {
+  if (e.target.matches(".element__close")) {
+    elementItem.classList.add("no-show");
+  }
+  renderMovies(movies);
+});
+
+mainList.addEventListener("click", function (e) {
+  if (e.target.matches(".movie__img")) {
+    mainList.innerHTML = "";
+    // elementItem.classList.remove("no-show");
+    renderCard();
+    // console.log(movies);
+  }
+});
+
+renderMovies(movies);
 
 const date = new Date();
 
