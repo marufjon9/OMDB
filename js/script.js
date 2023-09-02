@@ -3,6 +3,10 @@ const mainList = document.querySelector(".main__list");
 const fYear = document.querySelector(".f__year");
 const mainListMovies = document.querySelector(".main__list-movies");
 
+const movieImg = document.querySelector(".movie__img");
+const elementItem = document.querySelector(".element__item");
+const elementClose = document.querySelector(".element__close");
+
 if (localStorage.getItem("mode") == "dark") {
   darkMode();
 } else {
@@ -37,11 +41,10 @@ function renderMovies(array) {
     mainList.innerHTML += `
       <li class="movie__item" data-id=${element.id}>
         <img
-          dataset=${element.id}
+          data-id=${element.id}
           src=${element.img}
           alt=${element.title}
           class="movie__img"
-          
         />
         <div class="movie__textbox">
           <h2 class="movie__title">${element.title} <span>${element.year}</span></h2>
@@ -55,9 +58,11 @@ function renderMovies(array) {
 }
 
 function renderCard(array) {
+  mainListMovies.innerHTML = "";
+
   array.forEach((element) => {
     mainListMovies.innerHTML += `
-            <li class="element__item element no-show" data-id=${element.id}>
+            <li class="element__item element no-show" dataset=${element.id}>
               <div class="element__top">
                 <img
                   src=${element.img}
@@ -67,8 +72,11 @@ function renderCard(array) {
               </div>
               <div class="element__bottom">
                 <div class="element__writers">
-                  <p class="element__writer">${element.director[0]}</p>
-                  <p class="element__writer">${element.director[1]}</p>
+                  <div class="element__container">
+                    <p class="element__writer">${element.director[0]}</p>
+                    <p class="element__writer">${element.director[1]}</p>
+                  </div>  
+                  <button class="element__close" type="button" dataset=${element.title}></button>
                 </div>
                 <div class="element__name">
                   <p class="element__title">${element.title}</p>
@@ -114,27 +122,27 @@ function renderCard(array) {
                 </div>
               </div>
         </li>
-`;
+        `;
   });
 }
-const movieImg = document.querySelector(".movie__img");
-const elementItem = document.querySelector(".element__item");
-const elementClose = document.querySelector(".element__close");
+
+mainList.addEventListener("click", function (e) {
+  if (e.target.matches(".movie__img")) {
+    mainList.innerHTML = "";
+    const numberId = e.target.dataset.id;
+    // console.log(numberId);
+    const foundMovie = movies.find((item) => {
+      return item.id == numberId;
+    });
+    renderCard(foundMovie);
+  }
+});
 
 mainListMovies.addEventListener("click", function (e) {
   if (e.target.matches(".element__close")) {
     elementItem.classList.add("no-show");
   }
   renderMovies(movies);
-});
-
-mainList.addEventListener("click", function (e) {
-  if (e.target.matches(".movie__img")) {
-    mainList.innerHTML = "";
-    // elementItem.classList.remove("no-show");
-    renderCard();
-    // console.log(movies);
-  }
 });
 
 renderMovies(movies);

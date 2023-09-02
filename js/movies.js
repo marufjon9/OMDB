@@ -1,6 +1,6 @@
 movies = [
   {
-    id: 1,
+    id: "1",
     img: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1.png",
     title: "Interstellar",
     year: 2014,
@@ -28,7 +28,7 @@ movies = [
     ],
   },
   {
-    id: 2,
+    id: "2",
     img: "https://m.media-amazon.com/images/M/MV5BZTcxNzgzZjMtYzZiZC00MmE1LTg3MzQtZDAxMTYyZWE4MDNhL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1.png",
     title: "You've Got Mail",
     year: 1998,
@@ -56,7 +56,7 @@ movies = [
     ],
   },
   {
-    id: 3,
+    id: "3",
     img: "https://m.media-amazon.com/images/M/MV5BYTkxMDc2OTUtNjAyYi00NDUyLWE4OGMtODQwMjY5ZmRmOTMwXkEyXkFqcGdeQXVyMjM3NjM3Mg@@._V1.png",
     title: "The Crowded Room",
     year: 2023,
@@ -84,7 +84,7 @@ movies = [
     ],
   },
   {
-    id: 4,
+    id: "4",
     img: "https://m.media-amazon.com/images/M/MV5BMTUzNjE5ODYwN15BMl5BanBnXkFtZTgwMTY4MjQ1MTI@._V1._V1.png",
     title: "The Discovery",
     year: 2017,
@@ -112,7 +112,7 @@ movies = [
     ],
   },
   {
-    id: 5,
+    id: "5",
     img: "https://m.media-amazon.com/images/M/MV5BZjdmZDlkMzItNTg0OS00MjAxLWE0ZTQtZjdhOWM1MTJkOTc0XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1.png",
     title: "Run",
     year: 2020,
@@ -140,7 +140,7 @@ movies = [
     ],
   },
   {
-    id: 6,
+    id: "6",
     img: "https://m.media-amazon.com/images/M/MV5BNzI4MDMwMzUwNF5BMl5BanBnXkFtZTgwMDgyNzkyNzE@._V1.png",
     title: "How To Be Single",
     year: 2016,
@@ -169,7 +169,7 @@ movies = [
   },
 
   {
-    id: 7,
+    id: "7",
     img: "https://m.media-amazon.com/images/M/MV5BZjQxOTY2MzYtZjhhNy00Y2ExLWJiMWYtYTNkMzA2ZTk5MDU4XkEyXkFqcGdeQXVyNTU5Mzk0NjE@._V1.png",
     title: "Our Friend",
     year: 2019,
@@ -197,7 +197,7 @@ movies = [
     ],
   },
   {
-    id: 8,
+    id: "8",
     img: "https://m.media-amazon.com/images/M/MV5BMTMzODg4MjU4OF5BMl5BanBnXkFtZTYwNDAzNTU3._V1.png",
     title: "The Painted Veil",
     year: 2006,
@@ -226,7 +226,7 @@ movies = [
   },
 
   {
-    id: 9,
+    id: "9",
     img: "https://m.media-amazon.com/images/M/MV5BNmQxZTNiODYtNzBhYy00MzVlLWJlN2UtNTc4YWZjMDIwMmEzXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1.png",
     title: "The French Dispatch",
     year: 2021,
@@ -254,7 +254,7 @@ movies = [
     ],
   },
   {
-    id: 10,
+    id: "10",
     img: "https://m.media-amazon.com/images/M/MV5BMDJiZGE5NzYtZGU3Zi00NDQwLWFhMjAtNTM0MDM2ZTljMjAzXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1.png",
     title: "Ratched",
     year: 2020,
