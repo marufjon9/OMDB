@@ -76,21 +76,29 @@ function renderCard(array) {
                     <p class="element__writer">${element.director[0]}</p>
                     <p class="element__writer">${element.director[1]}</p>
                   </div>  
-                  <button class="element__close" type="button" dataset=${element.title}></button>
+                  <button class="element__close" type="button"></button>
                 </div>
                 <div class="element__name">
                   <p class="element__title">${element.title}</p>
                 </div>
                 <div class="element__genre">
                   <span class="element__type-first">${element.genre[0]}</span>
-                  <span class="element__type-second">${element.genre[1]}</span>
-                  <span class="element__type-third">${element.genre[2]}</span>
+                  <span class="element__type-second">${
+                    element.genre[1] ? element.genre[1] : "N/A"
+                  }</span>
+                  <span class="element__type-third">${
+                    element.genre[2] ? element.genre[2] : "N/A"
+                  }</span>
                 </div>
                 <div class="element__stats">
-                  <div class="element__play borders"></div>
+                  <a target="_blank" class="element__play borders" href='https://www.imdb.com/title/${
+                    element.imdbId
+                  }/'  ></a>
                   <span class="element__rating borders"
                     >Rating
-                    <span class="span__rating-value rotate">${element.rated}</span></span
+                    <span class="span__rating-value rotate">${
+                      element.rated
+                    }</span></span
                   >
                   <span class="element__release borders"
                     >Release
@@ -101,12 +109,14 @@ function renderCard(array) {
                   <span class="element__boxoffice borders"
                     >Boxoffice
                     <span class="span__boxoffice-value rotate"
-                      >${element.boxoffice}</span
+                      >${element.boxoffice ? element.boxoffice : "N/A"}</span
                     ></span
                   >
                   <span class="element__length borders"
                     >Length
-                    <span class="span__length-value rotate">${element.runtime}</span></span
+                    <span class="span__length-value rotate">${
+                      element.runtime ? element.runtime : "N/A"
+                    }</span></span
                   >
                 </div>
                 <div class="element__inner">
@@ -116,8 +126,16 @@ function renderCard(array) {
                   </p>
                   <div class="element__ratings">
                     <p class="element__imdb">${element.Ratings[0].Value}</p>
-                    <p class="element__rt">${element.Ratings[0].Value}</p>
-                    <p class="element__metacritic">${element.Ratings[0].Value}</p>
+                    <p class="element__rt">${
+                      element.Ratings[1]?.Value
+                        ? element.Ratings[1].Value
+                        : "N/A"
+                    }</p>
+                    <p class="element__metacritic">${
+                      element.Ratings[2]?.Value
+                        ? element.Ratings[2].Value
+                        : "N/A"
+                    }</p>
                   </div>
                 </div>
               </div>
@@ -137,9 +155,10 @@ mainList.addEventListener("click", function (e) {
 
 mainListMovies.addEventListener("click", function (e) {
   if (e.target.matches(".element__close")) {
-    elementItem.classList.add("no-show");
+    // elementItem.classList.add("no-show");
+    renderMovies(movies);
+    mainListMovies.innerHTML = "";
   }
-  renderMovies(movies);
 });
 
 renderMovies(movies);

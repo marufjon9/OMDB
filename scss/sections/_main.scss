@@ -12,6 +12,7 @@
   color: var(--main-text-color);
 }
 .movie__form {
+  position: relative;
 }
 .movie__input {
   outline: none;
@@ -56,7 +57,7 @@
   background-color: transparent;
 }
 .main {
-  padding-bottom: 30px;
+  // padding-bottom: 30px;
 }
 .main__wrapper {
 }
@@ -569,7 +570,7 @@
     gap: 10px;
   }
   .main {
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
   }
   .element__imdb {
     max-width: 305px;
@@ -658,4 +659,84 @@
 
 .no-show {
   display: none;
+}
+
+// --------------------
+
+.search-element h3 {
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin-right: 1rem;
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+.search-element .form-control {
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
+  border: none;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  outline: none;
+  color: var(--light-dark-color);
+  width: 350px;
+}
+.search-list {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  max-height: 500px;
+  overflow-y: scroll;
+  z-index: 10;
+}
+.search-list .search-list-item {
+  background-color: var(--light-dark-color);
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--dark-color);
+  width: calc(350px - 8px);
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: background-color 200ms ease;
+  -o-transition: background-color 200ms ease;
+  transition: background-color 200ms ease;
+}
+.search-list .search-list-item:hover {
+  background-color: #1f1f1f;
+}
+.search-list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.search-item-thumbnail img {
+  width: 40px;
+  margin-right: 1rem;
+}
+.search-item-info h3 {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.search-item-info p {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+/* thumbnail */
+.search-list::-webkit-scrollbar {
+  width: 8px;
+}
+.search-list::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.search-list::-webkit-scrollbar-thumb {
+  background-color: var(--yellow-color);
+  outline: none;
+  border-radius: 10px;
 }
