@@ -15,6 +15,7 @@
   position: relative;
 }
 .movie__input {
+  width: 180px;
   outline: none;
   border-radius: 8px;
   border: 1px solid transparent;
@@ -688,6 +689,7 @@
   top: 100%;
   max-height: 500px;
   overflow-y: scroll;
+  overflow-x: hidden;
   z-index: 10;
 }
 .search-list .search-list-item {
@@ -739,4 +741,162 @@
   background-color: var(--yellow-color);
   outline: none;
   border-radius: 10px;
+}
+.hide-search-list {
+  display: none;
+}
+
+@media only screen and (min-width: 320px) {
+  .search-item-info h3 {
+    font-weight: 400;
+    font-size: 0.5rem;
+  }
+  .search-element .form-control {
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    border: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    outline: none;
+    color: var(--light-dark-color);
+    width: 170px;
+  }
+  .search-list {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    max-height: 500px;
+    max-width: 180px;
+    overflow-y: scroll;
+    z-index: 10;
+  }
+  .search-list .search-list-item {
+    background-color: var(--light-dark-color);
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--dark-color);
+    width: calc(180px - 8px);
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: background-color 200ms ease;
+    -o-transition: background-color 200ms ease;
+    transition: background-color 200ms ease;
+  }
+}
+
+@media only screen and (min-width: 375px) {
+  .search-item-info h3 {
+    font-weight: 500;
+    font-size: 0.6rem;
+  }
+  .search-element .form-control {
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    border: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    outline: none;
+    color: var(--light-dark-color);
+    width: 190px;
+  }
+  .search-list {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    max-height: 500px;
+    max-width: 190px;
+    overflow-y: scroll;
+    z-index: 10;
+  }
+  .search-list .search-list-item {
+    background-color: var(--light-dark-color);
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--dark-color);
+    width: calc(190px - 8px);
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: background-color 200ms ease;
+    -o-transition: background-color 200ms ease;
+    transition: background-color 200ms ease;
+  }
+  .movie__input {
+    width: 190px;
+  }
+}
+
+@media only screen and (min-width: 575px) {
+  .search-item-info h3 {
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+  .search-element .form-control {
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    border: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    outline: none;
+    color: var(--light-dark-color);
+    width: 210px;
+  }
+  .search-list {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    max-height: 500px;
+    max-width: 210px;
+    overflow-y: scroll;
+    z-index: 10;
+  }
+  .search-list .search-list-item {
+    background-color: var(--light-dark-color);
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--dark-color);
+    width: calc(210px - 8px);
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: background-color 200ms ease;
+    -o-transition: background-color 200ms ease;
+    transition: background-color 200ms ease;
+  }
+  .movie__input {
+    width: 210px;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .search-item-info h3 {
+    font-size: 1rem;
+  }
+  .search-element .form-control {
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    border: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    outline: none;
+    color: var(--light-dark-color);
+    width: 350px;
+  }
+  .search-list {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    max-height: 500px;
+    max-width: 342px;
+    overflow-y: scroll;
+    z-index: 10;
+  }
+  .search-list .search-list-item {
+    background-color: var(--light-dark-color);
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--dark-color);
+    width: calc(350px - 8px);
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: background-color 200ms ease;
+    -o-transition: background-color 200ms ease;
+    transition: background-color 200ms ease;
+  }
+  .movie__input {
+    width: 342px;
+  }
 }

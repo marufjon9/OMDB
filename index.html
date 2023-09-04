@@ -22,10 +22,11 @@
               type="search"
               class="movie__input"
               placeholder="Search for a movie"
+              onkeyup="findMovies()"
             />
             <div class="search-list" id="search-list">
               <!-- list here -->
-              <div class="search-list-item">
+              <!-- <div class="search-list-item">
                 <div class="search-item-thumbnail">
                   <img src="/img/medium-cover.jpg" />
                 </div>
@@ -33,7 +34,7 @@
                   <h3>Guardians of the Galaxy Vol. 2</h3>
                   <p>2017</p>
                 </div>
-              </div>
+              </div> -->
             </div>
           </form>
         </div>
@@ -49,70 +50,7 @@
         <div class="main__wrapper">
           <h1 class="main__title">Popular Movies</h1>
           <ul class="main__list"></ul>
-          <ul class="main__list-movies">
-            <!-- <li class="element__item element">
-              <div class="element__top">
-                <img
-                  src="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1.png"
-                  alt="ratched"
-                  class="element__img"
-                />
-              </div>
-              <div class="element__bottom">
-                <div class="element__writers">
-                  <div class="element__container">
-                    <p class="element__writer">Aaron Horvath</p>
-                    <p class="element__writer">Michael Jelenic</p>
-                  </div>
-                  <button class="element__close" type="button"></button>
-                </div>
-                <div class="element__name">
-                  <p class="element__title">The Super Mario Bros. Movie</p>
-                </div>
-                <div class="element__genre">
-                  <span class="element__type-first">Animation</span>
-                  <span class="element__type-second">Animation</span>
-                  <span class="element__type-third">Animation</span>
-                </div>
-                <div class="element__stats">
-                  <div class="element__play borders"></div>
-                  <span class="element__rating borders"
-                    >Rating
-                    <span class="span__rating-value rotate">PG</span></span
-                  >
-                  <span class="element__release borders"
-                    >Release
-                    <span class="span__release-value rotate"
-                      >April 7, 2023</span
-                    ></span
-                  >
-                  <span class="element__boxoffice borders"
-                    >Boxoffice
-                    <span class="span__boxoffice-value rotate"
-                      >574,223,720</span
-                    ></span
-                  >
-                  <span class="element__length borders"
-                    >Length
-                    <span class="span__length-value rotate">126 min</span></span
-                  >
-                </div>
-                <div class="element__inner">
-                  <p class="element__info">Description</p>
-                  <p class="element__desription">
-                    A plumber named Mario travels through an underground
-                    labyrinth with his brother, Luigi, trying to save a captured
-                    princess.
-                  </p>
-                  <div class="element__ratings">
-                    <p class="element__imdb">46/100</p>
-                    <p class="element__rt">46/100</p>
-                    <p class="element__metacritic">46/100</p>
-                  </div>
-                </div>
-              </div>
-            </li> -->
-          </ul>
+          <ul class="main__list-movies"></ul>
         </div>
       </div>
     </main>
