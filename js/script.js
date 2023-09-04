@@ -32,8 +32,8 @@ function findMovies() {
 function displayMovieList(moviess) {
   searchList.innerHTML = "";
   for (let idx = 0; idx < moviess.length; idx++) {
-    let movieListItem = document.createElement("div");
-    movieListItem.dataset.id = moviess[idx].imdbId;
+    var movieListItem = document.createElement("div");
+    movieListItem.dataset.id = moviess[idx].imdbID;
     movieListItem.classList.add("search-list-item");
     if (moviess[idx].Poster != "N/A") {
       moviePoster = moviess[idx].Poster;
@@ -53,72 +53,6 @@ function displayMovieList(moviess) {
     searchList.appendChild(movieListItem);
   }
 }
-
-// function displayMovieList(movies) {
-//   searchList.innerHTML = "";
-//   for (let idx = 0; idx < movies.length; idx++) {
-//     let movieListItem = document.createElement("div");
-//     movieListItem.dataset.id = movies[idx].imdbID;
-//     movieListItem.classList.add("search-list-item");
-//     if (movies[idx].Poster != "N/A") moviePoster = movies[idx].Poster;
-//     else moviePoster = "./img/image_not_found.png";
-
-//     movieListItem.innerHTML = `
-//         <div class = "search-item-thumbnail">
-//             <img src = "${moviePoster}">
-//         </div>
-//         <div class = "search-item-info">
-//             <h3>${movies[idx].Title}</h3>
-//             <p>${movies[idx].Year}</p>
-//         </div>
-//         `;
-//     searchList.appendChild(movieListItem);
-//   }
-//   loadMovieDetails();
-// }
-
-// function loadMovieDetails() {
-//   const searchListMovies = searchList.querySelectorAll(".search-list-item");
-//   searchListMovies.forEach((movie) => {
-//     movie.addEventListener("click", async () => {
-//       // console.log(movie.dataset.id);
-//       searchList.classList.add("hide-search-list");
-//       movieSearchBox.value = "";
-//       const result = await fetch(
-//         `http://www.omdbapi.com/?i=${movie.dataset.id}&apikey=fc1fef96`,
-//       );
-//       const movieDetails = await result.json();
-//       // console.log(movieDetails);
-//       // displayMovieDetails(movieDetails);
-//     });
-//   });
-// }
-
-// function displayMovieDetails(details) {
-//   resultGrid.innerHTML = `
-//     <div class = "movie-poster">
-//         <img src = "${
-//           details.Poster != "N/A" ? details.Poster : "image_not_found.png"
-//         }" alt = "movie poster">
-//     </div>
-//     <div class = "movie-info">
-//         <h3 class = "movie-title">${details.Title}</h3>
-//         <ul class = "movie-misc-info">
-//             <li class = "year">Year: ${details.Year}</li>
-//             <li class = "rated">Ratings: ${details.Rated}</li>
-//             <li class = "released">Released: ${details.Released}</li>
-//         </ul>
-//         <p class = "genre"><b>Genre:</b> ${details.Genre}</p>
-//         <p class = "writer"><b>Writer:</b> ${details.Writer}</p>
-//         <p class = "actors"><b>Actors: </b>${details.Actors}</p>
-//         <p class = "plot"><b>Plot:</b> ${details.Plot}</p>
-//         <p class = "language"><b>Language:</b> ${details.Language}</p>
-//         <p class = "awards"><b><i class = "fas fa-award"></i></b> ${
-//           details.Awards
-//         }</p>
-//     </div>
-//     `;
-// }
 
 window.addEventListener("click", (event) => {
   if (event.target.className != "form-control") {
@@ -158,17 +92,17 @@ function renderMovies(array) {
   mainList.textContent = "";
   array.forEach((element) => {
     mainList.innerHTML += `
-      <li class="movie__item" data-id=${element.id}>
+      <li class="movie__item" data-id=${element.imdbID}>
         <img
-          data-id=${element.id}
-          src=${element.img}
-          alt=${element.title}
+          data-id=${element.imdbID}
+          src=${element.Poster}
+          alt=${element.Title}
           class="movie__img"
         />
         <div class="movie__textbox">
-          <h2 class="movie__title">${element.title} <span>${element.year}</span></h2>
+          <h2 class="movie__title">${element.Title} <span>${element.Year}</span></h2>
           
-          <p class="movie__type">${element.type}</p>
+          <p class="movie__type">${element.Genre}</p>
         </div>
         <button class="movie__fav" type="button"></button>
       </li>
@@ -181,67 +115,67 @@ function renderCard(array) {
 
   array.forEach((element) => {
     mainListMovies.innerHTML += `
-            <li class="element__item element" dataset=${element.id}>
+            <li class="element__item element" dataset=${element.imdbID}>
               <div class="element__top">
                 <img
-                  src=${element.img}
-                  alt="${element.title}"
+                  src=${element.Poster}
+                  alt="${element.Title}"
                   class="element__img"
                 />
               </div>
               <div class="element__bottom">
                 <div class="element__writers">
                   <div class="element__container">
-                    <p class="element__writer">${element.director[0]}</p>
-                    <p class="element__writer">${element.director[1]}</p>
+                    <p class="element__writer">${element.Writer[0]}</p>
+                    <p class="element__writer">${element.Writer[1]}</p>
                   </div>  
                   <button class="element__close" type="button"></button>
                 </div>
                 <div class="element__name">
-                  <p class="element__title">${element.title}</p>
+                  <p class="element__title">${element.Title}</p>
                 </div>
                 <div class="element__genre">
-                  <span class="element__type-first">${element.genre[0]}</span>
+                  <span class="element__type-first">${element.Genre[0]}</span>
                   <span class="element__type-second">${
-                    element.genre[1] ? element.genre[1] : "N/A"
+                    element.Genre[1] ? element.Genre[1] : "N/A"
                   }</span>
                   <span class="element__type-third">${
-                    element.genre[2] ? element.genre[2] : "N/A"
+                    element.Genre[2] ? element.Genre[2] : "N/A"
                   }</span>
                 </div>
                 <div class="element__stats">
                   <a target="_blank" class="element__play borders" href='https://www.imdb.com/title/${
-                    element.imdbId
+                    element.imdbID
                   }/'  ></a>
                   <span class="element__rating borders"
                     >Rating
                     <span class="span__rating-value rotate">${
-                      element.rated
+                      element.Rated
                     }</span></span
                   >
                   <span class="element__release borders"
                     >Release
                     <span class="span__release-value rotate"
-                      >${element.released}</span
+                      >${element.Released}</span
                     ></span
                   >
                   <span class="element__boxoffice borders"
                     >Boxoffice
                     <span class="span__boxoffice-value rotate"
-                      >${element.boxoffice ? element.boxoffice : "N/A"}</span
+                      >${element.BoxOffice ? element.BoxOffice : "N/A"}</span
                     ></span
                   >
                   <span class="element__length borders"
                     >Length
                     <span class="span__length-value rotate">${
-                      element.runtime ? element.runtime : "N/A"
+                      element.Runtime ? element.Runtime : "N/A"
                     }</span></span
                   >
                 </div>
                 <div class="element__inner">
                   <p class="element__info">Description</p>
                   <p class="element__desription">
-                    ${element.plot}
+                    ${element.Plot}
                   </p>
                   <div class="element__ratings">
                     <p class="element__imdb">${element.Ratings[0].Value}</p>
@@ -267,7 +201,8 @@ mainList.addEventListener("click", function (e) {
   if (e.target.matches(".movie__img")) {
     mainList.innerHTML = "";
     const elementId = e.target.dataset.id;
-    const foundMovie = movies.filter((item) => item.id == elementId);
+    // console.log(elementId);
+    const foundMovie = movies.filter((item) => item.imdbID == elementId);
     renderCard(foundMovie);
   }
 });
