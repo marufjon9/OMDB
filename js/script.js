@@ -10,6 +10,7 @@ const elementClose = document.querySelector(".element__close");
 const movieInput = document.querySelector(".movie__input");
 const movieForm = document.querySelector(".movie__form");
 const searchList = document.getElementById("search-list");
+const searchListItem = document.querySelector(".search-list-item");
 
 async function loadMovies(searchTerm) {
   const URL = `https://www.omdbapi.com/?apikey=62de789&s=${searchTerm}&page=1`;
@@ -42,7 +43,7 @@ function displayMovieList(moviess) {
     }
 
     movieListItem.innerHTML = `
-      <div class="search-item-thumbnail">
+      <div class="search-item-thumbnail" dataset=${moviess[idx].imdbID}>
           <img src="${moviePoster}" />
       </div>
       <div class="search-item-info">
@@ -52,6 +53,110 @@ function displayMovieList(moviess) {
     `;
     searchList.appendChild(movieListItem);
   }
+  loadMovieDetails();
+}
+
+function loadMovieDetails() {
+  const searchListMovies = searchList.querySelectorAll(".search-list-item");
+  searchListMovies.forEach((movie) => {
+    movie.addEventListener("click", async () => {
+      // console.log(movie.dataset.id);
+      searchList.classList.add("hide-search-list");
+      movieInput.value = "";
+      const result = await fetch(
+        `https://www.omdbapi.com/?apikey=62de789&i=${movie.dataset.id}&page=1`,
+      );
+      const movieDetails = await result.json();
+      // console.log(movieDetails);
+      displayMovieDetails(movieDetails);
+    });
+  });
+}
+
+function displayMovieDetails(details) {
+  mainList.innerHTML = "";
+  mainListMovies.innerHTML = "";
+  mainListMovies.innerHTML = `
+    <li class="element__item element" dataset=${details.imdbID}>
+              <div class="element__top">
+                <img
+                  src=${details.Poster}
+                  dataset=${details.imdbID}
+                  alt="${details.Title}"
+                  class="element__img"
+                />
+              </div>
+              <div class="element__bottom">
+                <div class="element__writers">
+                  <div class="element__container">
+                    <p class="element__writer">${details.Writer[0]}</p>
+                    <p class="element__writer">${details.Writer[1]}</p>
+                  </div>  
+                  <button class="element__close" type="button"></button>
+                </div>
+                <div class="element__name">
+                  <p class="element__title">${details.Title}</p>
+                </div>
+                <div class="element__genre">
+                  <span class="element__type-first">${details.Genre[0]}</span>
+                  <span class="element__type-second">${
+                    details.Genre[1] ? details.Genre[1] : "N/A"
+                  }</span>
+                  <span class="element__type-third">${
+                    details.Genre[2] ? details.Genre[2] : "N/A"
+                  }</span>
+                </div>
+                <div class="element__stats">
+                  <a target="_blank" class="element__play borders" href='https://www.imdb.com/title/${
+                    details.imdbID
+                  }/'  ></a>
+                  <span class="element__rating borders"
+                    >Rating
+                    <span class="span__rating-value rotate">${
+                      details.Rated
+                    }</span></span
+                  >
+                  <span class="element__release borders"
+                    >Release
+                    <span class="span__release-value rotate"
+                      >${details.Released}</span
+                    ></span
+                  >
+                  <span class="element__boxoffice borders"
+                    >Boxoffice
+                    <span class="span__boxoffice-value rotate"
+                      >${details.BoxOffice ? details.BoxOffice : "N/A"}</span
+                    ></span
+                  >
+                  <span class="element__length borders"
+                    >Length
+                    <span class="span__length-value rotate">${
+                      details.Runtime ? details.Runtime : "N/A"
+                    }</span></span
+                  >
+                </div>
+                <div class="element__inner">
+                  <p class="element__info">Description</p>
+                  <p class="element__desription">
+                    ${details.Plot}
+                  </p>
+                  <div class="element__ratings">
+                    <p class="element__imdb">${details.Ratings[0].Value}</p>
+                    <p class="element__rt">${
+                      details.Ratings[1]?.Value
+                        ? details.Ratings[1].Value
+                        : "N/A"
+                    }</p>
+                    <p class="element__metacritic">${
+                      details.Ratings[2]?.Value
+                        ? details.Ratings[2].Value
+                        : "N/A"
+                    }</p>
+                  </div>
+                </div>
+              </div>
+        </li>
+  `;
 }
 
 window.addEventListener("click", (event) => {
@@ -119,6 +224,7 @@ function renderCard(array) {
               <div class="element__top">
                 <img
                   src=${element.Poster}
+                  dataset=${element.imdbID}
                   alt="${element.Title}"
                   class="element__img"
                 />
@@ -212,6 +318,11 @@ mainListMovies.addEventListener("click", function (e) {
     // elementItem.classList.add("no-show");
     renderMovies(movies);
     mainListMovies.innerHTML = "";
+  }
+});
+
+searchList.addEventListener("click", function (e) {
+  if (e.target.matches(".search-list-item")) {
   }
 });
 
